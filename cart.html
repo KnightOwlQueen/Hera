@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Hera Alliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;700;900&display=swap');
+        
+        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Cinzel', serif; }
+        .peacock-glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-yellow-500/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <nav class="max-w-7xl mx-auto p-8 flex justify-between items-center">
+        <a href="index.html" class="serif text-xl font-bold tracking-widest text-white uppercase group flex items-center gap-2">
+            <span class="text-yellow-500">H</span> Hera Alliance
+        </a>
+        <a href="index.html" class="text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+            Continue Shopping
+        </a>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <h1 class="serif text-4xl italic mb-12">Your <span class="text-yellow-500">Cart</span></h1>
+
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-8" data-aos="fade-up">
+                <div class="hidden md:grid grid-cols-6 pb-4 border-b border-white/10 text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold">
+                    <div class="col-span-3">Product</div>
+                    <div class="text-center">Quantity</div>
+                    <div class="text-right col-span-2">Total</div>
+                </div>
+
+                <div class="py-8 border-b border-white/5 grid grid-cols-1 md:grid-cols-6 items-center gap-6">
+                    <div class="col-span-3 flex items-center gap-6">
+                        <div class="w-24 h-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                            <span class="serif text-2xl text-yellow-500 font-bold italic">S</span>
+                        </div>
+                        <div>
+                            <h3 class="serif text-lg text-white">Sovereign Pro Plan</h3>
+                            <p class="text-xs text-white/40 mt-1">Billed Monthly</p>
+                            <button class="text-[9px] uppercase tracking-widest text-red-400/60 hover:text-red-400 mt-4 transition-colors">Remove Item</button>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="flex items-center border border-white/10 rounded-full px-4 py-2 gap-4">
+                            <button class="text-white/40 hover:text-white">-</button>
+                            <span class="text-sm font-bold">1</span>
+                            <button class="text-white/40 hover:text-white">+</button>
+                        </div>
+                    </div>
+
+                    <div class="text-right col-span-2">
+                        <span class="text-xl serif italic text-white font-bold">$1,299.00</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-col md:flex-row gap-4">
+                    <input type="text" placeholder="PROMO CODE" class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-[10px] tracking-widest text-white outline-none focus:border-yellow-500/50 transition-all md:w-64 uppercase">
+                    <button class="px-8 py-4 border border-white/10 rounded-xl text-[10px] font-bold tracking-widest uppercase hover:bg-white/5 transition-all">Apply Code</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4" data-aos="fade-left">
+                <div class="peacock-glass rounded-3xl border border-white/10 p-8">
+                    <h3 class="serif text-xl italic mb-6">Order Summary</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white/50">Subtotal</span>
+                            <span class="text-white">$1,299.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white/50">Estimated Tax</span>
+                            <span class="text-white">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white/50">Processing Fee</span>
+                            <span class="text-white text-teal-400 uppercase text-[10px] font-bold">Free</span>
+                        </div>
+                        <div class="h-px bg-white/10 my-6"></div>
+                        <div class="flex justify-between items-center">
+                            <span class="serif text-lg">Total</span>
+                            <span class="text-2xl serif italic text-yellow-500 font-bold">$1,299.00</span>
+                        </div>
+                    </div>
+
+                    <a id="checkout-link" href="checkout.html" class="block w-full py-5 bg-yellow-500 text-center text-black rounded-xl font-black uppercase text-[10px] tracking-[0.2em] hover:bg-yellow-400 transition-all shadow-xl shadow-yellow-500/10 mb-4">
+    Proceed to Checkout
+</a>
+                    
+                    <div class="flex items-center justify-center gap-4 mt-6">
+                        <div class="opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-help">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        </div>
+                        <div class="opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-help">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+
+    // 1. URL Parameter Logic
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get('plan');
+    
+    if (plan === 'core') {
+        document.querySelector('.serif.text-lg').innerText = 'Core Node Plan';
+        document.querySelectorAll('.text-white.font-bold, .text-yellow-500.font-bold').forEach(el => el.innerText = '$499.00');
+    } else if (plan === 'enterprise') {
+        document.querySelector('.serif.text-lg').innerText = 'Global Enterprise';
+        document.querySelectorAll('.text-white.font-bold, .text-yellow-500.font-bold').forEach(el => el.innerText = 'Custom Quote');
+    }
+
+    // 2. Remove Item Logic
+    function removeItem(button) {
+        // Find the product row (the parent grid)
+        const row = button.closest('.grid');
+        row.style.opacity = '0';
+        row.style.transition = 'all 0.5s ease';
+        
+        setTimeout(() => {
+            row.innerHTML = `
+                <div class="col-span-6 py-12 text-center">
+                    <p class="text-white/20 uppercase tracking-[0.3em] italic">Network cluster decommissioned. Your cart is empty.</p>
+                    <a href="index.html" class="inline-block mt-4 text-yellow-500 text-[10px] font-bold uppercase tracking-widest border-b border-yellow-500/20 pb-1">Return to Protocol</a>
+                </div>
+            `;
+            row.style.opacity = '1';
+            
+            // Reset totals to $0.00
+            document.querySelectorAll('.text-white.font-bold, .text-yellow-500.font-bold').forEach(el => el.innerText = '$0.00');
+        }, 500);
+    }
+
+    // Attach the function to the remove button
+    document.querySelector('button.text-red-400\\/60').onclick = function() {
+        removeItem(this);
+    };
+
+    // 3. Simple Quantity Logic
+    const qtySpan = document.querySelector('.text-sm.font-bold');
+    const plusBtn = qtySpan.nextElementSibling;
+    const minusBtn = qtySpan.previousElementSibling;
+
+    plusBtn.onclick = () => {
+        let val = parseInt(qtySpan.innerText);
+        qtySpan.innerText = val + 1;
+    };
+
+    minusBtn.onclick = () => {
+        let val = parseInt(qtySpan.innerText);
+        if(val > 1) qtySpan.innerText = val - 1;
+    };
+    // ... (your existing URL Parameter Logic)
+
+// 4. Connect Checkout Link Logic
+const checkoutLink = document.getElementById('checkout-link');
+if (plan) {
+    // This appends the current plan to the checkout URL (e.g., checkout.html?plan=core)
+    checkoutLink.href = `checkout.html?plan=${plan}`;
+}
+
+// 5. Handle empty cart state for the button
+function updateCheckoutButtonState(isEmpty) {
+    if (isEmpty) {
+        checkoutLink.style.pointerEvents = 'none';
+        checkoutLink.style.opacity = '0.5';
+        checkoutLink.innerText = 'Cart Empty';
+    }
+}
+
+// Update your existing removeItem function to call this:
+const originalRemoveItem = removeItem;
+removeItem = function(button) {
+    originalRemoveItem(button);
+    updateCheckoutButtonState(true);
+};
+</script>
+</body>
+</html>

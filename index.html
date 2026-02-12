@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hera Alliance | Sovereign Partnership Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+        :root {
+            --peacock-teal: #0d9488;
+            --royal-gold: #eab308;
+            --hera-white: #f8fafc;
+        }
+          /* Add this to your global CSS to ensure the scroll is smooth */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Adjust this value based on your navbar height so headers aren't hidden */
+    }
+
+        body {
+            background-color: #020617;
+            color: var(--hera-white);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .serif { font-family: 'Cormorant Garamond', serif; }
+
+        .peacock-glass {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.05) 0%, rgba(234, 179, 8, 0.02) 100%);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(234, 179, 8, 0.1);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(234, 179, 8, 0.15);
+        }
+
+        .peacock-feather-border {
+            border-left: 4px solid;
+            border-image: linear-gradient(to bottom, var(--peacock-teal), var(--royal-gold)) 1;
+        }
+
+        .nav-link:hover {
+            color: var(--royal-gold);
+            text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <nav class="fixed w-full z-50 p-6 flex justify-between items-center peacock-glass border-b border-gold-500/10">
+    <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <div class="w-10 h-10 border-2 border-yellow-500 rounded-full flex items-center justify-center group-hover:rotate-180 transition-transform duration-700">
+                <span class="text-yellow-500 text-2xl serif font-bold">H</span>
+            </div>
+            <span class="text-xl serif font-bold tracking-widest text-white uppercase">Hera Alliance</span>
+        </div>
+
+        <div class="hidden xl:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold text-white/40">
+            <a href="#hero" class="nav-link text-white hover:text-yellow-500 transition-colors">The Network</a>
+            
+            <a href="#stats" class="nav-link hover:text-yellow-500 transition-colors">Live Telemetry</a>
+            
+            <a href="#cohorts" class="nav-link hover:text-yellow-500 transition-colors">Segmentation</a>
+            
+            <a href="#pricing" class="nav-link hover:text-yellow-500 transition-colors">Network Tiers</a>
+            
+            <a href="#governance" class="nav-link hover:text-yellow-500 transition-colors">Consensus Protocol</a>
+        </div>
+    </div>
+
+    <button onclick="toggleModal()" class="px-6 py-2 border border-yellow-500/50 rounded-full text-[10px] font-black uppercase tracking-widest text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all">
+        Initialize Protocol
+    </button>
+</nav>
+
+
+
+    <section id="hero" class="relative pt-48 pb-32 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+            <div class="inline-block px-4 py-1 mb-6 border-l-2 border-yellow-500 bg-yellow-500/5 text-[10px] tracking-[0.3em] uppercase text-yellow-500 font-bold">
+                The Standard for Strategic Alliances
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl serif font-bold italic leading-tight mb-8">
+                Autonomous <br> <span class="text-teal-400">Sovereign Networks</span>
+            </h1>
+            
+            <p class="text-lg text-white/50 leading-relaxed mb-10 max-w-lg">
+                Engineered for the next era of business confederation. Leverage high-status tiering and programmable SLAs to build unbreakable partnership ecosystems that outpace the market.
+            </p>
+            
+            <div class="flex gap-4">
+                <button onclick="toggleModal()" class="px-8 py-4 bg-yellow-500 text-black font-bold rounded-xl hover:scale-105 transition-transform">Initialize Protocol</button>
+                <button class="px-8 py-4 peacock-glass rounded-xl font-bold hover:border-yellow-500 transition-all">Explore the Network</button>
+            </div>
+        </div>
+        
+        <div class="relative" data-aos="zoom-in">
+            <div class="peacock-glass p-8 rounded-[3rem] gold-glow relative z-10">
+                <div class="flex justify-between items-center mb-10">
+                    <h3 class="serif italic text-2xl text-yellow-500">Tier Vitality</h3>
+                    <span class="text-[10px] mono text-white/20">Oracle Sync: 14:00 UTC</span>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="peacock-feather-border bg-white/5 p-4 rounded-r-2xl">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xs font-bold tracking-widest uppercase">Imperial Peacock Tier</span>
+                            <span class="text-teal-400 text-xs font-mono">98% Retention</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/10 rounded-full">
+                            <div class="w-[98%] h-full bg-gradient-to-r from-teal-500 to-yellow-500 shadow-[0_0_15px_rgba(20,184,166,0.4)]"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-l-4 border-teal-500/30 bg-white/5 p-4 rounded-r-2xl">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xs font-bold tracking-widest uppercase text-white/40">Active Alliance Nodes</span>
+                            <span class="text-white/20 text-xs font-mono">74% Capacity</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/10 rounded-full">
+                            <div class="w-[74%] h-full bg-teal-500/50"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-8 border-t border-white/5">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[9px] uppercase tracking-widest text-white/20 font-bold">System Status</span>
+                        <span class="text-[9px] uppercase tracking-widest text-teal-400 font-bold flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span> Optimal
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-teal-500/10 rounded-full blur-[80px]"></div>
+            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-yellow-500/5 rounded-full blur-[80px]"></div>
+        </div>
+    </div>
+</section>
+
+    <section class="py-24 px-6 bg-white/[0.01]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="p-10 peacock-glass rounded-3xl border border-white/5 hover:border-teal-500/30 transition-all duration-500" data-aos="fade-up">
+            <div class="w-12 h-12 mb-8 flex items-center justify-center rounded-full bg-teal-500/10 border border-teal-500/20">
+                <svg viewBox="0 0 24 24" class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <h3 class="serif text-2xl italic mb-4 text-white">Immutable <span class="text-teal-400">SLAs</span></h3>
+            <p class="text-sm text-white/40 leading-relaxed font-light">Programmable contract lifecycles that enforce ecosystem integrity. Transform standard agreements into automated, high-fidelity unions of business logic and shared revenue.</p>
+        </div>
+
+        <div class="p-10 peacock-glass rounded-3xl border border-white/5 hover:border-yellow-500/30 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-12 h-12 mb-8 flex items-center justify-center rounded-full bg-yellow-500/10 border border-yellow-500/20">
+                <svg viewBox="0 0 24 24" class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </div>
+            <h3 class="serif text-2xl italic mb-4 text-white">Consensus <span class="text-yellow-500">Protocol</span></h3>
+            <p class="text-sm text-white/40 leading-relaxed font-light">Centralized governance for distributed networks. Facilitate transparent voting and automated policy distribution to maintain absolute channel equilibrium.</p>
+        </div>
+
+        <div class="p-10 peacock-glass rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-12 h-12 mb-8 flex items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/20">
+                <svg viewBox="0 0 24 24" class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+            <h3 class="serif text-2xl italic mb-4 text-white">Automated <span class="text-purple-400">Onboarding</span></h3>
+            <p class="text-sm text-white/40 leading-relaxed font-light">Deploy new partner nodes via frictionless integration workflows. Scale your alliance through instant provisioning and standardized ecosystem syncing.</p>
+        </div>
+    </div>
+</section>
+    
+    <section id="stats" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-down">
+            <h2 class="serif text-4xl md:text-6xl italic mb-4 text-yellow-500">Sovereign Ecosystem Health</h2>
+            <p class="text-[10px] tracking-[0.5em] uppercase text-white/40">Live Partnership Telemetry</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-4 gap-6">
+            <div class="peacock-glass p-6 rounded-2xl border-l-2 border-teal-500 hover:bg-white/[0.03] transition-colors" data-aos="fade-right">
+                <p class="text-[10px] uppercase tracking-widest text-white/30 mb-2">Network Nodes</p>
+                <div class="text-4xl serif italic text-white">1,204</div>
+                <div class="mt-4 flex items-center gap-2 text-[10px] text-teal-400 font-bold uppercase tracking-tighter">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                    </span> 
+                    +12 Integrations Today
+                </div>
+            </div>
+
+            <div class="peacock-glass p-6 rounded-2xl border-l-2 border-yellow-500 hover:bg-white/[0.03] transition-colors" data-aos="fade-right" data-aos-delay="100">
+                <p class="text-[10px] uppercase tracking-widest text-white/30 mb-2">Yield Optimization</p>
+                <div class="text-4xl serif italic text-white">84.2%</div>
+                <div class="mt-4 flex items-center gap-2 text-[10px] text-yellow-500 font-bold uppercase tracking-tighter">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13H9v2H7v2h2v2h2v-2h2V9h-2V7z" clip-rule="evenodd"/></svg>
+                    High-Velocity APR
+                </div>
+            </div>
+
+            <div class="peacock-glass p-6 rounded-2xl border-l-2 border-purple-500 hover:bg-white/[0.03] transition-colors" data-aos="fade-right" data-aos-delay="200">
+                <p class="text-[10px] uppercase tracking-widest text-white/30 mb-2">Oracle Stability</p>
+                <div class="text-4xl serif italic text-white">99.99%</div>
+                <div class="mt-4 flex items-center gap-2 text-[10px] text-purple-400 font-bold uppercase tracking-tighter">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    Encrypted Protocol
+                </div>
+            </div>
+
+            <div class="peacock-glass p-6 rounded-2xl border-l-2 border-red-500 hover:bg-white/[0.03] transition-colors" data-aos="fade-right" data-aos-delay="300">
+                <p class="text-[10px] uppercase tracking-widest text-white/30 mb-2">Counterparty Risk</p>
+                <div class="text-4xl serif italic text-white">Negligible</div>
+                <div class="mt-4 flex items-center gap-2 text-[10px] text-red-400 font-bold uppercase tracking-tighter">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    No Churn Detected
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="allianceModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 transition-all duration-500">
+    <div class="absolute inset-0 bg-midnight/90 backdrop-blur-md" onclick="toggleModal()"></div>
+    
+    <div class="sovereign-glass max-w-xl w-full p-10 rounded-[3rem] border border-amber-400/30 gold-glow relative z-10" data-aos="zoom-in">
+        <button onclick="toggleModal()" class="absolute top-8 right-8 text-white/20 hover:text-amber-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <div class="text-center mb-10">
+            <div class="inline-block w-16 h-16 border-2 border-amber-400 rounded-full mb-6">
+                <div class="w-full h-full flex items-center justify-center">
+                    <span class="text-amber-400 text-3xl font-light tracking-tighter animate-pulse">H</span>
+                </div>
+            </div>
+            <h3 class="serif text-4xl italic text-white mb-2">Initialize Protocol</h3>
+            <p class="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold">Request Access to the Sovereign Network</p>
+        </div>
+
+        <form class="space-y-6">
+            <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-widest text-amber-400/60 font-bold ml-4">Authorized Entity</label>
+                <input type="text" placeholder="Organization Name" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-amber-400/50 transition-all text-sm text-white">
+            </div>
+            <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-widest text-amber-400/60 font-bold ml-4">Primary Admin (Network Node)</label>
+                <input type="email" placeholder="admin@domain.com" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-amber-400/50 transition-all text-sm text-white">
+            </div>
+            
+            <div class="pt-4">
+                <button type="submit" class="w-full py-5 bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-bold rounded-2xl shadow-xl shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-[1.02] transition-all uppercase text-xs tracking-[0.3em]">
+                    Submit for Protocol Review
+                </button>
+                <p class="text-[9px] text-center text-white/20 mt-6 uppercase tracking-widest leading-loose">
+                    Submission confirms alignment with <span class="text-amber-400/40">Immutable Governance SLAs</span> & ecosystem standards.
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<section id="cohorts" class="py-24 px-6 bg-teal-950/10 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2" data-aos="fade-right">
+            <div class="inline-block px-3 py-1 mb-6 rounded-full border border-yellow-500/20 bg-yellow-500/5 text-[9px] uppercase tracking-[0.3em] text-yellow-500 font-bold">
+                Dynamic Node Clustering
+            </div>
+            
+            <h2 class="serif text-5xl italic mb-6 text-white">Strategic <span class="text-yellow-500">Segmentation</span></h2>
+            <p class="text-white/50 mb-8 leading-relaxed text-lg">
+                Organize your distribution channels into high-performance tiers. Deploy automated onboarding sequences and dynamic yield distributions optimized for partner performance and historical retention.
+            </p>
+            
+            <ul class="space-y-6">
+                <li class="group flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] text-white/80 transition-all hover:text-white">
+                    <span class="w-8 h-[1px] bg-yellow-500 transition-all group-hover:w-12"></span> Elite Affiliate Network
+                </li>
+                <li class="group flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] text-white/80 transition-all hover:text-white">
+                    <span class="w-8 h-[1px] bg-yellow-500 transition-all group-hover:w-12"></span> Strategic Channel Partners
+                </li>
+                <li class="group flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] text-white/80 transition-all hover:text-white">
+                    <span class="w-8 h-[1px] bg-yellow-500 transition-all group-hover:w-12"></span> Enterprise Expansion Agents
+                </li>
+            </ul>
+        </div>
+        
+        <div class="lg:w-1/2 grid grid-cols-2 gap-6" data-aos="fade-left">
+            <div class="h-56 rounded-[2.5rem] peacock-glass border border-teal-500/20 flex flex-col justify-end p-8 hover:bg-white/5 transition-all group">
+                <span class="text-teal-400 text-[10px] font-bold uppercase tracking-widest mb-2">High-Tier Alpha</span>
+                <div class="text-3xl italic text-white group-hover:text-teal-400 transition-colors">94% Retention</div>
+                <div class="w-full h-1 bg-white/5 mt-4 rounded-full overflow-hidden">
+                    <div class="h-full bg-teal-500 w-[94%] shadow-[0_0_10px_rgba(20,184,166,0.5)]"></div>
+                </div>
+            </div>
+
+            <div class="h-56 rounded-[2.5rem] peacock-glass border border-yellow-500/20 flex flex-col justify-end p-8 mt-12 hover:bg-white/5 transition-all group">
+                <span class="text-yellow-500 text-[10px] font-bold uppercase tracking-widest mb-2">Expansion Beta</span>
+                <div class="text-3xl italic text-white group-hover:text-yellow-500 transition-colors">62% Scaling</div>
+                <div class="w-full h-1 bg-white/5 mt-4 rounded-full overflow-hidden">
+                    <div class="h-full bg-yellow-500 w-[62%] shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ <section id="pricing" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="serif text-5xl italic text-yellow-500">Network Tiers</h2>
+            <p class="text-[10px] tracking-[0.4em] uppercase text-white/30 mt-4">Ecosystem Subscription Access</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+            <div class="peacock-glass p-8 rounded-[2rem] border border-white/5 hover:border-teal-500/30 transition-all" data-aos="fade-up">
+                <h4 class="uppercase tracking-widest font-black text-xs text-white/40 mb-2">Core Node</h4>
+                <div class="text-4xl serif italic mb-6 text-white">$499<span class="text-sm text-white/20">/mo</span></div>
+                <ul class="space-y-4 text-xs text-white/50 mb-10">
+                    <li class="flex items-center gap-2">✔ 100 Active Alliances</li>
+                    <li class="flex items-center gap-2">✔ Automated Onboarding Flows</li>
+                    <li class="flex items-center gap-2">✔ Standard API Support</li>
+                </ul>
+                <a href="cart.html?plan=core" class="block w-full py-4 border border-white/10 rounded-xl hover:bg-white/5 transition-all uppercase text-[10px] font-bold tracking-widest text-white text-center">
+                    Initialize Tier
+                </a>
+            </div>
+            
+            <div class="peacock-glass p-8 rounded-[2.5rem] border border-yellow-500/30 gold-glow relative scale-105 z-10" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-black px-4 py-1 text-[8px] font-black uppercase tracking-widest rounded-full shadow-lg shadow-yellow-500/20">Most Sovereign</div>
+                <h4 class="uppercase tracking-widest font-black text-xs text-yellow-500 mb-2">Sovereign Pro</h4>
+                <div class="text-4xl serif italic mb-6 text-white">$1,299<span class="text-sm text-white/20">/mo</span></div>
+                <ul class="space-y-4 text-xs text-white/80 mb-10">
+                    <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Unlimited Network Unions</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Advanced Ecosystem Vigilance</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Priority Protocol Governance</li>
+                </ul>
+                <a href="cart.html?plan=pro" class="block w-full py-4 bg-yellow-500 text-black rounded-xl hover:scale-105 shadow-xl shadow-yellow-500/40 transition-all uppercase text-[10px] font-bold tracking-widest text-center">
+                    Deploy Sovereignty
+                </a>
+            </div>
+            
+            <div class="peacock-glass p-8 rounded-[2rem] border border-white/5 hover:border-purple-500/30 transition-all" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="uppercase tracking-widest font-black text-xs text-white/40 mb-2">Global Enterprise</h4>
+                <div class="text-4xl serif italic mb-6 text-white">Custom</div>
+                <ul class="space-y-4 text-xs text-white/50 mb-10">
+                    <li class="flex items-center gap-2">✔ White-Label Network Access</li>
+                    <li class="flex items-center gap-2">✔ Dedicated Integration Engineers</li>
+                    <li class="flex items-center gap-2">✔ Full-Spectrum Alliance Telemetry</li>
+                </ul>
+                <a href="cart.html?plan=enterprise" class="block w-full py-4 border border-white/10 rounded-xl hover:bg-white/5 transition-all uppercase text-[10px] font-bold tracking-widest text-white text-center">
+                    Request Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="governance" class="py-32 px-6 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8" data-aos="fade-up">
+            <div class="max-w-2xl">
+                <div class="inline-block px-4 py-1 mb-4 border-l-2 border-amber-400 bg-amber-400/5 text-[10px] tracking-[0.3em] uppercase text-amber-400 font-bold">
+                    Strategic Decision Protocol
+                </div>
+                <h2 class="text-5xl md:text-7xl serif font-bold italic leading-tight">
+                    Network <span class="text-purple-500">Governance</span>
+                </h2>
+            </div>
+            <div class="text-right">
+                <p class="text-[10px] uppercase tracking-widest text-white/30 mb-2 font-bold">Live Consensus Status</p>
+                <div class="flex items-center gap-3 justify-end">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981]"></span>
+                    <span class="serif italic text-2xl text-emerald-400">Stable Equilibrium</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 space-y-6" data-aos="fade-right">
+                <h3 class="serif text-2xl italic text-amber-400 mb-8 flex items-center gap-4">
+                    Open Proposals 
+                    <span class="text-[10px] font-sans font-bold uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full text-white/40">2 Active Sessions</span>
+                </h3>
+
+                <div class="sovereign-glass p-8 rounded-[2rem] border border-white/5 hover:border-purple-500/30 transition-all group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Ecosystem Upgrade #842</span>
+                            <h4 class="text-2xl serif mt-1 text-white">Yield Optimization: Peacock Tier Dividend</h4>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] text-white/20 uppercase tracking-widest">Window Closes</span>
+                            <p class="text-sm font-mono font-bold text-amber-400">14:22:09</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest">
+                            <span class="text-teal-400">Approve (72%)</span>
+                            <span class="text-white/20">Decline (28%)</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden flex">
+                            <div class="h-full bg-gradient-to-r from-purple-500 to-amber-400 shadow-[0_0_15px_rgba(168,85,247,0.4)]" style="width: 72%"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button class="flex-1 py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-teal-500/20 hover:border-teal-400/50 hover:text-teal-400 transition-all">Stake Approve</button>
+                        <button class="flex-1 py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-rose-500/20 hover:border-rose-400/50 hover:text-rose-400 transition-all">Stake Decline</button>
+                    </div>
+                </div>
+
+                <div class="sovereign-glass p-8 rounded-[2rem] border-white/5 opacity-50 hover:opacity-100 transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Infrastructure Mandate #011</span>
+                            <h4 class="text-2xl serif mt-1">Argos Monitoring: Full Node Upgrade</h4>
+                        </div>
+                    </div>
+                    <button class="w-full py-3 bg-white/5 border border-white/5 rounded-xl text-[10px] font-bold uppercase tracking-[0.2em] cursor-not-allowed">In Review Phase</button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1" data-aos="fade-left">
+                <div class="sovereign-glass p-8 rounded-[2rem] border border-amber-400/20 gold-glow">
+                    <h3 class="serif text-2xl italic text-amber-400 mb-8">System Changelog</h3>
+                    <div class="space-y-8 relative">
+                        <div class="absolute left-2 top-2 bottom-2 w-px bg-gradient-to-b from-amber-400 via-purple-500 to-transparent"></div>
+
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 bg-midnight border-2 border-amber-400 rounded-full"></div>
+                            <span class="text-[10px] text-amber-400 font-bold uppercase tracking-widest">V2.4 Implemented</span>
+                            <p class="text-sm font-bold mt-1 text-white">Immutable SLA Protocol</p>
+                            <p class="text-xs text-white/40 mt-1 leading-relaxed">Integrated core binary logic for high-tier automated revenue splits.</p>
+                        </div>
+
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 bg-midnight border-2 border-purple-500 rounded-full"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest">V2.1 Implemented</span>
+                            <p class="text-sm font-bold mt-1 text-white">Real-Time Vigilance Treaty</p>
+                            <p class="text-xs text-white/40 mt-1 leading-relaxed">Cross-network stability monitoring live across all alliance nodes.</p>
+                        </div>
+
+                        <div class="relative pl-8 opacity-40">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 bg-midnight border-2 border-white/20 rounded-full"></div>
+                            <span class="text-[10px] text-white/40 font-bold uppercase tracking-widest">Queued</span>
+                            <p class="text-sm font-bold mt-1">Global Yield Distribution Law</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2 order-2 lg:order-1" data-aos="fade-right">
+            <div class="bg-slate-950 rounded-3xl p-8 border border-white/10 font-mono text-sm overflow-hidden shadow-2xl">
+                <div class="flex gap-2 mb-6">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-teal-500/40"></div>
+                </div>
+                <p class="text-teal-400 mb-2">// Establish Immutable Partnership</p>
+                <p class="text-white/40">const alliance = await Hera.createNetworkNode({</p>
+                <p class="pl-4 text-white/80">partnerId: "NODE_0842",</p>
+                <p class="pl-4 text-white/80">governance: "SLA_VERSION_4",</p>
+                <p class="pl-4 text-yellow-500">vigilance: "REAL_TIME_MONITORING"</p>
+                <p class="text-white/40">});</p>
+                <p class="text-teal-400 mt-4">console.log(alliance.status); <span class="text-white/20">// Result: "Active_Sovereign"</span></p>
+            </div>
+        </div>
+        
+        <div class="lg:w-1/2 order-1 lg:order-2" data-aos="fade-left">
+            <h2 class="serif text-5xl italic mb-6">Developer <span class="text-teal-400">Partner API</span></h2>
+            <p class="text-white/50 mb-8 leading-relaxed">Seamlessly integrate your existing stack with our sovereign network. Our low-latency API provides real-time webhooks for partnership events, contract execution, and ecosystem security updates.</p>
+            <button class="px-8 py-4 peacock-glass rounded-xl font-black text-[10px] uppercase tracking-[0.3em] text-white border border-white/10 hover:border-teal-400/50 transition-all">Documentation & SDK</button>
+        </div>
+    </div>
+</section>
+
+    <section class="py-24 px-6 relative bg-yellow-500/5">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+            <h2 class="serif text-5xl italic text-yellow-500 mb-8">Consensus Governance</h2>
+            <p class="text-lg text-white/60 mb-12 font-light">
+                Total transparency for your partnership architecture. Every stakeholder functions as a governance node with direct voting rights on network-wide policy shifts, margin recalibrations, and ecosystem expansion protocols.
+            </p>
+            
+            <div class="flex justify-center -space-x-4 mb-10">
+                <div class="w-16 h-16 rounded-full border-2 border-yellow-500 bg-slate-900 shadow-[0_0_15px_rgba(234,179,8,0.2)] flex items-center justify-center serif text-xl italic font-bold text-white">Z</div>
+                <div class="w-16 h-16 rounded-full border-2 border-yellow-500 bg-slate-900 shadow-[0_0_15px_rgba(234,179,8,0.2)] flex items-center justify-center serif text-xl italic font-bold text-white">P</div>
+                <div class="w-16 h-16 rounded-full border-2 border-yellow-500 bg-slate-900 shadow-[0_0_15px_rgba(234,179,8,0.2)] flex items-center justify-center serif text-xl italic font-bold text-white">A</div>
+                <div class="w-16 h-16 rounded-full border-2 border-yellow-500 bg-slate-900 shadow-[0_0_15px_rgba(234,179,8,0.2)] flex items-center justify-center serif text-xl italic font-bold text-white">H</div>
+                <div class="w-16 h-16 rounded-full border-2 border-yellow-500 bg-yellow-500 flex items-center justify-center text-xs font-black text-black ring-8 ring-black/20">+400</div>
+            </div>
+
+            <div class="inline-flex gap-8 px-8 py-6 rounded-full peacock-glass border border-yellow-500/20">
+                <div class="text-left">
+                    <div class="text-[10px] font-bold text-white/30 uppercase tracking-widest">Active Proposals</div>
+                    <div class="text-xl serif font-bold text-white">14</div>
+                </div>
+                <div class="w-[1px] bg-white/10"></div>
+                <div class="text-left">
+                    <div class="text-[10px] font-bold text-white/30 uppercase tracking-widest">Network Consensus</div>
+                    <div class="text-xl serif font-bold text-white">2,841</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-20 px-6 border-t border-white/5 bg-midnight">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="serif italic text-2xl font-bold text-white tracking-tighter">Hera Alliance <span class="text-xs font-sans not-italic text-white/20 ml-2 uppercase tracking-widest">V4.2</span></div>
+        
+        <nav class="flex gap-8 text-[10px] uppercase tracking-widest text-white/40 font-bold">
+            <a href="#" class="hover:text-yellow-500 transition-colors">Node Support</a>
+            <a href="#" class="hover:text-yellow-500 transition-colors">API Reference</a>
+            <a href="#" class="hover:text-yellow-500 transition-colors">Strategic Collabs</a>
+            <a href="#" class="hover:text-yellow-500 transition-colors">Compliance SLAs</a>
+        </nav>
+        
+        <div class="text-[10px] text-white/20 uppercase tracking-widest font-medium">
+            © 2026 Sovereign Union Tech. <span class="hidden md:inline">|</span> Precision Ecosystems.
+        </div>
+    </div>
+</footer>
+
+  <script>
+    // Modal Logic
+    function toggleModal() {
+        const modal = document.getElementById('allianceModal');
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        } else {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+    }
+
+    // Initialize AOS
+    AOS.init({ duration: 1200, once: true });
+</script>
+</body>
+</html>

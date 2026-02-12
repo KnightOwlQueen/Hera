@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol Activated | Hera Alliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;700;900&display=swap');
+        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; overflow: hidden; }
+        .serif { font-family: 'Cinzel', serif; }
+        
+        /* Particle & Glow Effects */
+        .success-glow {
+            background: radial-gradient(circle at center, rgba(234, 179, 8, 0.15) 0%, transparent 70%);
+        }
+        .orbit-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: rotate 60s linear infinite;
+        }
+        @keyframes rotate { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center relative">
+
+    <div class="fixed inset-0 success-glow pointer-events-none"></div>
+    <div class="orbit-container">
+        <div class="absolute top-0 left-1/2 w-2 h-2 bg-yellow-500 rounded-full blur-sm"></div>
+    </div>
+
+    <main class="relative z-10 text-center px-6 max-w-2xl" data-aos="zoom-out" data-aos-duration="1500">
+        
+        <div class="mb-12 relative inline-block">
+            <div class="w-32 h-32 rounded-full border-2 border-yellow-500/30 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-yellow-500/10 animate-pulse"></div>
+                <span class="serif text-6xl text-yellow-500 font-bold italic">H</span>
+            </div>
+            <div class="absolute -inset-4 border border-teal-500/20 rounded-full animate-[ping_3s_ease-in-out_infinite]"></div>
+        </div>
+
+        <header class="space-y-4">
+            <h1 class="serif text-5xl md:text-6xl italic">Protocol <span class="text-yellow-500">Activated</span></h1>
+            <p class="text-[10px] uppercase tracking-[0.6em] text-teal-400 font-black">Welcome to the Sovereign Union</p>
+        </header>
+
+        <div class="mt-12 p-8 bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 space-y-6">
+            <div class="space-y-2">
+                <p class="text-xs text-white/40 uppercase tracking-widest">Accession ID</p>
+                <p class="serif text-xl text-white tracking-widest">#HERA-8829-X</p>
+            </div>
+            
+            <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            
+            <p class="text-sm leading-relaxed text-white/60 font-light">
+                Your credentials have been uploaded to the global consensus nodes. Priority governance access is now initializing. A confirmation uplink has been sent to your registered terminal.
+            </p>
+        </div>
+
+        <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
+            <a href="index.html" class="px-10 py-4 bg-white text-black text-[10px] font-black uppercase tracking-[0.3em] rounded-xl hover:bg-yellow-500 transition-all duration-500">
+                Enter Network
+            </a>
+            <button onclick="window.print()" class="text-[10px] uppercase tracking-widest text-white/30 hover:text-white transition-colors">
+                Download Receipt
+            </button>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        // Optional: Trigger confetti or specific sound on load
+        window.addEventListener('load', () => {
+            console.log("Hera Alliance: Welcome, Sovereign.");
+        });
+    </script>
+</body>
+</html>
